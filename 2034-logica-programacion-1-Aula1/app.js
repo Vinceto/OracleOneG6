@@ -2,6 +2,7 @@ let numeroSecreto = 6;
 let numeroUsuario = 0;
 let intentos = 1;
 let palabraVeces = "vez";
+let maximosIntentos =3;
 while (numeroUsuario != numeroSecreto){
     numeroUsuario = prompt("Me indicas un número por favor:");
 
@@ -20,7 +21,12 @@ while (numeroUsuario != numeroSecreto){
             alert(`El número secreto es mayor que ${numeroUsuario}. Intentos: ${intentos} ${palabraVeces}`);
         }
     }
-
+    //incrementa el contador de intentos cada vez que no acierta
     intentos++;
     palabraVeces = "veces";
+    if(intentos > maximosIntentos){
+        alert(`llegaste al número máximo de ${maximosIntentos} intentos`);
+        break;
+    }
+
 }
