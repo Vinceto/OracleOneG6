@@ -1,10 +1,10 @@
-let numeroSecreto = 6;
+let numeroSecreto = Math.floor(Math.random() * 10) + 1;
 let numeroUsuario = 0;
 let intentos = 1;
 let palabraVeces = "vez";
 let maximosIntentos =3;
 while (numeroUsuario != numeroSecreto){
-    numeroUsuario = prompt("Me indicas un número por favor:");
+    numeroUsuario = parseInt(prompt("Me indicas un número entre 1 y 10 por favor:"));
 
     console.log(numeroUsuario);
 
