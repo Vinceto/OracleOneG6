@@ -1,10 +1,21 @@
-let numeroSecreto = Math.floor(Math.random() * 10) + 1;
+
 let numeroUsuario = 0;
 let intentos = 1;
 let palabraVeces = "vez";
 let maximosIntentos =3;
+let numeroMaximoPosible = 0;
+while (numeroMaximoPosible < 2){
+    numeroMaximoPosible = parseInt(prompt("Inicia el juego. Indicame un numero Maximo para un rango desde 1 hasta:"))
+    if(numeroMaximoPosible > 1){
+        break;
+    }
+    alert("El numero debe ser Mayor a 1");
+}
+
+let numeroSecreto = Math.floor(Math.random() * numeroMaximoPosible) + 1;
+
 while (numeroUsuario != numeroSecreto){
-    numeroUsuario = parseInt(prompt("Me indicas un número entre 1 y 10 por favor:"));
+    numeroUsuario = parseInt(prompt(`Me indicas un número entre 1 y ${numeroMaximoPosible} por favor:`));
 
     console.log(numeroUsuario);
 
@@ -24,6 +35,7 @@ while (numeroUsuario != numeroSecreto){
     //incrementa el contador de intentos cada vez que no acierta
     intentos++;
     palabraVeces = "veces";
+    //usar el break para interrumpir un ciclo de iteraciones antes si se cumple una condicion
     if(intentos > maximosIntentos){
         alert(`llegaste al número máximo de ${maximosIntentos} intentos`);
         break;
